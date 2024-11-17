@@ -7,7 +7,7 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-
+/* this `prefers...` making sure that your theme is dark or not. */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #ffffff;
@@ -19,5 +19,12 @@ body {
   color: #000000;
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  padding:1rem;
+  /* padding:1rem; */
+}
+
+/* overwriting the styles in the base layer. */
+@layer base {
+  h1 {
+    @apply font-extrabold text-3xl mb-4;
+  }
 }

@@ -40,11 +40,8 @@ const UserTable = async ({sortOrder} : Props) => {
             <tr>
               <th>
                 <Link href ='/users?sortOrder=name'>Name</Link>
-                 
-                
                 </th>
               <th>
-                
               <Link href ='/users?sortOrder=email'>Email</Link> </th>
             </tr>
           </thead>

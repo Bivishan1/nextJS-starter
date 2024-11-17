@@ -1,4 +1,6 @@
 /* the classname should be in JS object's naming convention where it can't have dash rather camelcase, or others valid object names  E.g. .card-container is not valid but .cardContainer is valid.*/
+
+/* this seperate CSS module replaced by the tailwind css */
 .card { 
     padding: 1rem;
     border:1px solid #eee;
