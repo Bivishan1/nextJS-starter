@@ -1,6 +1,6 @@
 import React from 'react'
 import AddtoCart from './AddtoCart'
-import styles from './ProductCard.module.css'; //converts css style class into JS object.
+// import styles from './ProductCard.module.css'; //converts css style class into JS object.
 
 
 const ProductCard = () => {
