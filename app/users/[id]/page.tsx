@@ -4,7 +4,7 @@ import React from 'react'
 // to access route parameters i.e. [id] here, we need to pass props to this component.
 interface Props {
   // params is specific property to use as route parameters.
-  params: { id: string }; // Change number to string since URL params are strings
+  params: Promise<{ id: string }>; // Change number to string since URL params are strings
 }
 
 const UserDetails = async ({ params }: Props) => {
