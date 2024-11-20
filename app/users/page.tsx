@@ -4,8 +4,11 @@ import Link from 'next/link';
 
 interface Props {
   // params : {slug : string[]};
+<<<<<<< HEAD
   // searchParams : {sortOrder : string }
   //new code
+=======
+>>>>>>> 6c8e438dc0b9e9551e4926b163c2dfdf15ac037c
   searchParams : Promise<{sortOrder : string}>
 }
 // this is a users page. 
