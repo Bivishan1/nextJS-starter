@@ -1,8 +1,10 @@
 // import React from 'react';
-
+'use client';
 const NotFoundPage = () => {
   return (
-    <div>User Doesn't exist.</div>
+    <div>User Doesn&apos;t exist.
+    </div>
+  
   )
 }
 

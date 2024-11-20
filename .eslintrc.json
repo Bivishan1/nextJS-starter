@@ -1,3 +1,10 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "plugins": ["next"],
+  "rules": {
+      "google-font-display": "warning",
+      "google-font-preconnect": "warning",
+      "inline-script-id": "error"
+  }
+  
 }

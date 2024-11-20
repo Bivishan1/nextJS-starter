@@ -12,7 +12,8 @@ const NewUsersPage = () => {
     <div>
       <button className='btn btn-primary'
        onClick={ ()=> router.push('/users')}> Create User</button>
-    </div>// it directs where to navigate after submit the form.
+{/* it directs where to navigate after submit the form. */}
+    </div>
   )
 }
 
