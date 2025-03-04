@@ -7,14 +7,14 @@ interface Props {
     // searchParams : {sortOrder : string }
     //updated code
     params: Promise<{ slug?: string[] }>;
-searchParams: Promise<{ sortOrder?: string }>;
+searchParams: Promise<{ sortOrder: string }>;
 }
 
 const ProductsPage = async ({params, searchParams} : Props) => {
     const slug = (await params).slug?.join('/');
     const {sortOrder} = await searchParams;
   return (
-    <div>ProductsPage {slug} {sortOrder} </div>
+    <div>Products Page {slug} {sortOrder} </div>
   )
 }
 

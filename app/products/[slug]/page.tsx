@@ -2,7 +2,7 @@ import React from 'react';
 
 interface Props {
   params: Promise<{ slug?: string[] }>;
-  searchParams: Promise<{ sortOrder?: string }>;
+  searchParams: Promise<{ sortOrder: string }>;
 }
 
 const ProductsPage = async ({ params, searchParams }: Props) => {
