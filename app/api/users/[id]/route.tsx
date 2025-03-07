@@ -2,13 +2,17 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import schema from "../scheme";
+import {prisma} from "@/prisma/client";
 
 //an endpoint for getting an single object
-export async function GET(request: NextRequest, {params}:{params:{id:string}}) { 
-    const { id } = await params;
-    if (Number(id) > 10)
+export async function GET(request: NextRequest, {params}:{params:{id:string}}) { // little desctructing
+    const { id } =  await params;
+    // const user = await prisma.user.findUnique({where: {id: params.id}});
+    console.log('gettingssh');
+    const user = await prisma.user.findUnique({where : {id: Number(id)}});
+    if (!user)
         return NextResponse.json( {error:'User not found'}, {status:404});
-    return NextResponse.json( {id:1, name:'bivishan'});
+    return NextResponse.json(user, {status:200});
 }
 
 export async function PUT(request:NextRequest, {params}:{params:{id:string}}) {
@@ -18,15 +22,29 @@ export async function PUT(request:NextRequest, {params}:{params:{id:string}}) {
     return NextResponse.json(validation.error.errors, {status:400});  
 }
 
-if (Number(params.id) > 10) {
+const user = await prisma.user.findUnique({ where : {id:Number(params.id)}})
+
+if (!user) {
     return NextResponse.json({error: "user not found"}, {status:404});
 }
 
-return NextResponse.json({id:1, name: body.name});
+//updating from body of email and name values
+const updatedUser = await prisma.user.update( {// we await the call to update the user
+    where : { id: user.id},
+    data : {
+        email : body.email,
+        name : body.name
+    }
+})
+
+return NextResponse.json(updatedUser, {status:200});
 }
 
-export function DELETE(request:NextRequest, {params}:{params:{id:string}}) {
-    if (Number(params.id) > 10) 
+export async function DELETE(request:NextRequest, {params}:{params:{id:string}}) {
+    const user = await prisma.user.findUnique( {where: {id: Number(params.id)}});
+    if (!user) 
         return NextResponse.json({error: "user not found"}, {status:404});
+
+    await prisma.user.delete({where : {id:user.id}});
     return NextResponse.json({})   //different logic based on application structure.  
 }

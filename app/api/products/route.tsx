@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import schema from "./schema";
+import { Prisma } from "@prisma/client";
 
 export function GET(request: NextRequest) {
     return NextResponse.json( [ {id:1, name:'milk',price:'$2.23'}, {id:2, name:'sugar', price:'$5.66'}]);
