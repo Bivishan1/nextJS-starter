@@ -3,8 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 import schema from "./scheme";
 import { prisma } from "@/prisma/client";
 
-
-
 export async function GET(request: NextRequest) { 
     const users = await prisma.user.findMany(); // we can have multiple filter like where { email :''}, and other logic also,,e.g. findMany({where: {})
     return NextResponse.json(users);

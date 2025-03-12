@@ -5,9 +5,10 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-    <div className='flex bg-slate-300 p-3'>
+    <div className='flex space-x-8 bg-slate-300 p-3'>
         <Link href='/' className='mr-5'>Home</Link>
         <Link href='/users'>Users</Link>
+        <Link href='/api/auth/signin'>Login</Link>
     </div>
   )
 }
