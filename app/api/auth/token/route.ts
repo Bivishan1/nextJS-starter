@@ -1,5 +1,5 @@
 // this token valid for 30 days from the time it was created
-
+//this generally doesn't need in real world applications, but here just to understand the concept under the hood,
 import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 
