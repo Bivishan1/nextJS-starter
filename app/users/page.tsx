@@ -1,6 +1,10 @@
 import React from 'react';
 import UserTable from './UserTable';
 import Link from 'next/link';
+import { getServerSession } from 'next-auth';
+import authOptions from '../api/auth/authOptions';
+import { redirect } from 'next/navigation'; // To handle redirects
+
 
 interface Props {
   // params : {slug : string[]};
@@ -10,6 +14,13 @@ interface Props {
 // this is a users page.
 // async function UsersPage({searchParams} : Props,, {params} : Props){
 async function UsersPage({searchParams} : Props){
+  const session = await getServerSession(authOptions);
+  
+  // Check if session is authenticated
+  if (!session) {
+    // If no session, redirect to a login page or show an unauthenticated message
+    redirect('/auth/signin'); // You can change this to a custom path
+  }
   const { sortOrder } = await searchParams;// or whatever default you want
   // console.log(sortOrder);
   return (

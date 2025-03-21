@@ -19,12 +19,9 @@ const NavBar = () => {
       </Link>
       <Link href="/users">Users</Link>
       {status === "loading" &&  <div>Loading...</div>}
-      {/* we give here ! cause when status === 'loading' we don't have user object, but when authenticated, we def. have a user object, that's why we are telling to TS compiler that we def. have a user */}
+      {/* we give here ! cause we are telling compiler that when status === 'loading' we don't have user object, but when authenticated, we def. have a user object, that's why we are telling to TS compiler that we def. have a user */}
       {status === "authenticated" && <div>{session.user!.name}
-      {/* Use a form for sign-out */}
-      <form action="/api/auth/signout?callbackUrl=/" method="POST" className="ml-4">
-            <button type="submit">Sign Out</button>
-          </form>
+      <Link href="/api/auth/signout?callbackUrl=/" className="ml-4">Sign Out</Link>
        </div>}
       {status === "unauthenticated" && (
         <Link href="/api/auth/signin">Login</Link>
