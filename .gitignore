@@ -13,6 +13,10 @@
 # testing
 /coverage
 
+# preview email
+.react-email/
+
+
 # next.js
 /.next/
 /out/
