@@ -8,16 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        mono: "--font-geist-mono",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
     },
   },
-  plugins: [
-
-    require('daisyui'),
-  ],
+  plugins: [require("daisyui")],
   daisyui: {
     themes: ["winter"],
   },
